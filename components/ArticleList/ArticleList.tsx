@@ -81,12 +81,13 @@ const Article: React.FC<ArticleProps> = ({ article }) => (
           transform="scale(1.0)"
           src={article.src}
           alt="some text"
-          objectFit="contain"
+          objectFit="cover"
           width="100%"
           transition="0.3s ease-in-out"
           _hover={{
             transform: 'scale(1.05)',
           }}
+          maxHeight={'240px'}
         />
       </Box>
       <Box borderRadius="lg" overflow="hidden" m={2}>
