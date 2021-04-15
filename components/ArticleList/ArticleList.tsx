@@ -94,7 +94,7 @@ const Article: React.FC<ArticleProps> = ({ article }) => (
         <Heading fontSize="xl" marginTop="2" color={'white'}>
           {article.title}
         </Heading>
-        <Text as="p" fontSize="xl" color={'white'} color={useColorModeValue('red.700', 'red.200')}>
+        <Text as="p" fontSize="xl" color={useColorModeValue('red.700', 'red.200')}>
           {article.price}
         </Text>
         <Text as="div" fontSize="md" color={'white'} style={{
