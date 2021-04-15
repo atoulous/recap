@@ -131,7 +131,7 @@ export default function WithSpeechBubbles() {
           </Testimonial>
           <Testimonial>
             <TestimonialContent>
-              <TestimonialHeading>Mindblowing Service</TestimonialHeading>
+              <TestimonialHeading>C'est quoi ce truc de ouf</TestimonialHeading>
               <TestimonialText>
                 Mais t'es un monstre ! T'es un putain de gaillard mec, avec des grosses couilles ! Franchement GG !
               </TestimonialText>
