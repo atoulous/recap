@@ -21,6 +21,10 @@ const primaryTheme = extendTheme({
     heading: "Georgia, serif",
     mono: "Menlo, monospace",
   },
+  config: {
+    initialColorMode: 'dark',
+    useSystemColorMode: false,
+  },
 });
 
 export default primaryTheme;

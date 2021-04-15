@@ -5,16 +5,11 @@ import {
   Stack,
   SimpleGrid,
   Text,
-  Link,
   VisuallyHidden,
   chakra,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { FaTwitter, FaLinkedin, FaMailBulk, FaGithub } from 'react-icons/fa';
-
-import AppStoreBadge from '@/components/AppStoreBadge';
-import PlayStoreBadge from '@/components/PlayStoreBadge';
-import Logo from 'utils/Logo';
+import { FaLinkedin, FaMailBulk, FaGithub } from 'react-icons/fa';
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
@@ -65,12 +60,12 @@ export default function LargeWithAppLinksAndSocial() {
       color={useColorModeValue('gray.700', 'gray.200')}
     >
       <Container as={Stack} maxW={'6xl'} py={10}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 5 }} spacing={8}>
+        <SimpleGrid columns={{ base: 2, sm: 2, md: 5 }} spacing={8}>
           <Stack spacing={6}>
-            <Box>
-              <Logo color={useColorModeValue('gray.700', 'white')} />
+            <Box width={20} height={20} margin={'auto'}>
+              <img src={'/atlogo.png'} style={{ borderRadius: '50%'}}/>
             </Box>
-            <Stack direction={'row'} spacing={6}>
+            <Stack direction={'row'} spacing={6} justifyContent={'center'} >
               <SocialButton label={'LinkedIn'} href={'https://www.linkedin.com/in/aymeric-toulouse-19a768b7'}>
                 <FaLinkedin />
               </SocialButton>
@@ -85,34 +80,34 @@ export default function LargeWithAppLinksAndSocial() {
 
           <Stack align={'flex-start'}>
             <ListHeader>Portfolio</ListHeader>
-            <Link href={'#'}>About Me</Link>
-            <Link href={'#'}>Technology</Link>
-            <Link href={'#'}>Career</Link>
-            <Link href={'#'}>Contact Me</Link>
+            <p>About Me</p>
+            <p>Technology</p>
+            <p>Career</p>
+            <p>Contact Me</p>
           </Stack>
 
           <Stack align={'flex-start'}>
             <ListHeader>Front-end</ListHeader>
-            <Link href={'#'}>ReactJS</Link>
-            <Link href={'#'}>NextJS</Link>
-            <Link href={'#'}>GraphQL Apollo</Link>
-            <Link href={'#'}>Webpack</Link>
+            <p>ReactJS</p>
+            <p>NextJS</p>
+            <p>GraphQL Apollo</p>
+            <p>Webpack</p>
           </Stack>
 
           <Stack align={'flex-start'}>
             <ListHeader>Back-end</ListHeader>
-            <Link href={'#'}>NodeJS</Link>
-            <Link href={'#'}>Express</Link>
-            <Link href={'#'}>NestJS</Link>
-            <Link href={'#'}>GraphQL</Link>
+            <p>NodeJS</p>
+            <p>Express</p>
+            <p>NestJS</p>
+            <p>GraphQL</p>
           </Stack>
 
           <Stack align={'flex-start'}>
             <ListHeader>DevOps</ListHeader>
-            <Link href={'#'}>Docker</Link>
-            <Link href={'#'}>Unix</Link>
-            <Link href={'#'}>AWS</Link>
-            <Link href={'#'}>ELK</Link>
+            <p>Docker</p>
+            <p>AWS</p>
+            <p>ELK</p>
+            <p>SQL/noSQL</p>
           </Stack>
         </SimpleGrid>
       </Container>

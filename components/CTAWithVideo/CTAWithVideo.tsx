@@ -16,6 +16,8 @@ import {
 } from '@chakra-ui/react';
 import { FaGithub, FaLinkedin, FaQuestion } from 'react-icons/fa';
 import Blur from "../../utils/Blur";
+import {favouriteArticle} from "../../utils/articles";
+import React from "react";
 
 export default function CTAWithVideo() {
   const t = { t: 'toto', m: null}
@@ -48,14 +50,17 @@ export default function CTAWithVideo() {
                 zIndex: -1,
               }}
             >
-              Recap Vacances Vilnavey Summer 2021,
+              Recap Vacances
             </Text>
             <br />
             <Text as={'span'} color={'red.400'}>
-              samedi 17 au 24 juillet
+              Vilnavey Summer 2021
             </Text>
           </Heading>
-          <Text fontSize={'xl'}>
+          <Text
+            fontSize={'xl'}
+          >
+            La semaine du <b>samedi 17 au samedi 24 juillet</b> win the GP !
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}
@@ -71,7 +76,14 @@ export default function CTAWithVideo() {
               _hover={{ bg: 'red.500' }}
               leftIcon={<FaQuestion />}
             >
-              <Link isExternal target={'_blank'} href={'https://doodle.com/poll/emgsxq5t563hpc2c?utm_source=poll&utm_medium=link'}>Sondage</Link>
+              <Link
+                isExternal
+                target={'_blank'}
+                href={'https://doodle.com/poll/emgsxq5t563hpc2c?utm_source=poll&utm_medium=link'}
+                textDecoration="none" _hover={{ textDecoration: 'none' }}
+              >
+                Sondage
+              </Link>
             </Button>
           </Stack>
         </Stack>
@@ -83,15 +95,19 @@ export default function CTAWithVideo() {
           w={'full'}
         >
           <Blob
-            w={'150%'}
-            h={'150%'}
+            w={'180%'}
+            h={'180%'}
             position={'absolute'}
             top={'-20%'}
             left={0}
             zIndex={-1}
             color={useColorModeValue('red.50', 'red.400')}
           />
-          <Box
+          <Link
+            isExternal
+            target={'_blank'}
+            href={'https://doodle.com/poll/emgsxq5t563hpc2c?utm_source=poll&utm_medium=link'}
+            textDecoration="none" _hover={{ textDecoration: 'none' }}
             position={'relative'}
             height={'500px'}
             rounded={'2xl'}
@@ -106,7 +122,7 @@ export default function CTAWithVideo() {
               h={'100%'}
               src={'sondage.png'}
             />
-          </Box>
+          </Link>
         </Flex>
       </Stack>
     </Container>

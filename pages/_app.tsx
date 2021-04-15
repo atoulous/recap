@@ -2,7 +2,7 @@ import type { AppProps } from 'next/app';
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client';
 import { ChakraProvider } from '@chakra-ui/react';
-import primaryTheme from '@/lib/themes';
+import primaryTheme from '../utils/themes';
 
 const client = new ApolloClient({
   link: createHttpLink({

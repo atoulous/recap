@@ -24,6 +24,7 @@ import {
 } from '@chakra-ui/icons';
 import { IoMoon, IoSunny } from 'react-icons/io5';
 import NextLink from 'next/link';
+import { Link as LinkScroll } from "react-scroll";
 
 import Logo from 'utils/Logo';
 
@@ -65,7 +66,8 @@ export default function WithSubnavigation() {
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
           <NextLink href={'/'}>
             <Flex align={{ base: 'center' }}>
-              <Logo color={useColorModeValue('gray.700', 'white')} />
+              <Text>
+              </Text>
             </Flex>
           </NextLink>
 
@@ -148,7 +150,11 @@ const DesktopNav = () => {
                   color: useColorModeValue('gray.800', 'white'),
                 }}
               >
-                <NextLink href={navItem.href ?? '#'}>{navItem.label}</NextLink>
+                {
+                  navItem?.linkScroll
+                    ? <LinkScroll to={navItem.href} smooth>{navItem.label}</LinkScroll>
+                    : <NextLink href={navItem.href}>{navItem.label}</NextLink>
+                }
               </Text>
             </PopoverTrigger>
 
@@ -227,7 +233,7 @@ const MobileNav = () => {
   );
 };
 
-const MobileNavItem = ({ label, children, href }: NavItem) => {
+const MobileNavItem = ({ label, children, href, linkScroll }: NavItem) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -242,7 +248,11 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         fontWeight={600}
         color={useColorModeValue('gray.600', 'gray.200')}
       >
-        <NextLink href={href ?? '#'}>{label}</NextLink>
+        {
+          linkScroll
+            ? <LinkScroll to={href} smooth>{label}</LinkScroll>
+            : <NextLink href={href}>{label}</NextLink>
+        }
         {children && (
           <Icon
             as={ChevronDownIcon}
@@ -281,55 +291,20 @@ interface NavItem {
   children?: Array<NavItem>;
   href?: string;
   id: number;
+  linkScroll: boolean;
 }
 
 const NAV_ITEMS: Array<NavItem> = [
   {
     id: 1,
-    label: 'Inspiration',
+    label: 'Sondage',
     href: '/',
-    children: [
-      {
-        id: 1,
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
-        href: '/',
-      },
-      {
-        id: 2,
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
-        href: '/',
-      },
-    ],
+    linkScroll: false,
   },
   {
     id: 2,
-    label: 'Find Work',
-    href: '/',
-    children: [
-      {
-        id: 1,
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
-        href: '/',
-      },
-      {
-        id: 2,
-        label: 'Freelance Projects',
-        subLabel: 'An exclusive list for contract work',
-        href: '/',
-      },
-    ],
-  },
-  {
-    id: 3,
-    label: 'Learn Design',
-    href: '/blog',
-  },
-  {
-    id: 4,
-    label: 'Hire Designers',
-    href: '/join',
+    label: 'Airbnb',
+    href: 'airbnb',
+    linkScroll: true,
   },
 ];
