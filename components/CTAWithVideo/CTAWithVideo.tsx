@@ -22,7 +22,7 @@ const SondageRecap = ({ sondage }) => (
   <Stack
     align={'center'}
     spacing={{ base: 8, md: 10 }}
-    py={{ base: 5, md: 28 }}
+    py={{ base: 5, md: 10 }}
     direction={{ base: 'column', md: 'row' }}
   >
     <Stack flex={1} spacing={{ base: 5, md: 10 }}>
@@ -129,12 +129,20 @@ export default function CTAWithVideo() {
           Vilnavey Summer 2021
         </Text>
       </Heading>
+      <Heading
+        mt={10}
+        mb={5}
+      >
+        <Text as={'p'}>
+          Sondages:
+        </Text>
+      </Heading>
 
       <Tabs>
         <TabList>
           {
             sondages.map(sondage =>
-              <Tab>{sondage.title}</Tab>
+              <Tab key={sondage.key}>{sondage.title}</Tab>
             )
           }
         </TabList>
@@ -142,7 +150,7 @@ export default function CTAWithVideo() {
           {
             sondages.map(sondage =>
               <TabPanel>
-                <SondageRecap sondage={sondage} />
+                <SondageRecap key={sondage.key} sondage={sondage} />
               </TabPanel>
             )
           }

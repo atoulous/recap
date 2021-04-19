@@ -6,7 +6,7 @@ export interface SondageInterface {
   text: string,
 }
 
-export const sondages: SondageInterface = [
+export const sondages: Array<SondageInterface> = [
   {
     key: 2,
     title: 'Choix de jours',
