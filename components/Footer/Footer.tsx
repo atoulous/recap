@@ -86,7 +86,7 @@ export default function LargeWithAppLinksAndSocial() {
           justify={{ md: 'space-between' }}
           align={{ md: 'center' }}
         >
-          <Text>© 2021 made with love by rico</Text>
+          <Text>© 2021 made with love</Text>
         </Container>
       </Box>
     </Box>
