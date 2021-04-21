@@ -14,7 +14,7 @@ function Tokyo() {
         const clock = new THREE.Clock();
         const container = document.getElementById( 'tokyoContainer' );
 
-        const stats = new Stats();
+        const stats = Stats();
         stats.begin()
         // container.appendChild( stats.dom );
 

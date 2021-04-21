@@ -1,4 +1,6 @@
-module.exports = {
+const withTM = require('next-transpile-modules')(['three'])
+
+module.exports = withTM({
     webpack: (config) => {
         config.module.rules.push({
             test: /\.(graphql|gql)$/,
@@ -19,4 +21,4 @@ module.exports = {
     typescript: {
         ignoreBuildErrors: true,
     }
-};
+});

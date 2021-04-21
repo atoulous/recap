@@ -1,8 +1,8 @@
 import { NextSeo } from 'next-seo';
 import { Fade } from '@chakra-ui/react';
 
-import Layout from 'components/Layout';
-import Fiber from 'components/Fiber';
+import Layout from '@/components/Layout';
+import Fiber from '@/components/Breakout';
 
 const HomePage = () => {
     return (

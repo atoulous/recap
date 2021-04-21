@@ -313,4 +313,10 @@ const NAV_ITEMS: Array<NavItem> = [
     href: '/tokyo',
     linkScroll: false,
   },
+  {
+    id: 4,
+    label: 'Breakout',
+    href: '/breakout',
+    linkScroll: false,
+  },
 ];
