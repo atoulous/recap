@@ -44,7 +44,7 @@ const SondageRecap = ({ sondage }) => (
           colorScheme={'red'}
           bg={'red.400'}
           _hover={{ bg: 'red.500' }}
-          leftIcon={<FaQuestion />}
+          leftIcon={sondage.buttonText ? '' : <FaQuestion />}
         >
           <Link
             isExternal
@@ -52,7 +52,7 @@ const SondageRecap = ({ sondage }) => (
             href={sondage.url}
             textDecoration="none" _hover={{ textDecoration: 'none' }}
           >
-            Sondage
+            {sondage.buttonText || 'Sondage'}
           </Link>
         </Button>
       </Stack>
@@ -142,15 +142,15 @@ export default function CTAWithVideo() {
         <TabList>
           {
             sondages.map(sondage =>
-              <Tab key={sondage.key}>{sondage.title}</Tab>
+              <Tab key={sondage.id}>{sondage.title}</Tab>
             )
           }
         </TabList>
         <TabPanels>
           {
             sondages.map(sondage =>
-              <TabPanel>
-                <SondageRecap key={sondage.key} sondage={sondage} />
+              <TabPanel key={sondage.id}>
+                <SondageRecap sondage={sondage} />
               </TabPanel>
             )
           }
