@@ -41,6 +41,11 @@ function Paddle({ args = [2, 0.5, 1] }) {
 
 function Enemy({ args = [2, 0.5, 1], color, ...props }) {
     const [ref] = useBox(() => ({ args, ...props }))
+
+    useFrame((state) => {
+        return {};
+    })
+
     return (
         <mesh ref={ref}>
             <boxBufferGeometry args={args} />

@@ -319,4 +319,10 @@ const NAV_ITEMS: Array<NavItem> = [
     href: '/breakout',
     linkScroll: false,
   },
+  {
+    id: 5,
+    label: 'Grass',
+    href: '/grass',
+    linkScroll: false,
+  },
 ];
