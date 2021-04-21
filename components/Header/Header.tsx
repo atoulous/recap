@@ -307,4 +307,10 @@ const NAV_ITEMS: Array<NavItem> = [
     href: 'airbnb',
     linkScroll: true,
   },
+  {
+    id: 3,
+    label: 'Tokyo',
+    href: '/tokyo',
+    linkScroll: false,
+  },
 ];
