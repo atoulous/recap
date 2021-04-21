@@ -44,7 +44,7 @@ const SondageRecap = ({ sondage }) => (
           colorScheme={'red'}
           bg={'red.400'}
           _hover={{ bg: 'red.500' }}
-          leftIcon={sondage.buttonText ? '' : <FaQuestion />}
+          leftIcon={<FaQuestion />}
         >
           <Link
             isExternal
